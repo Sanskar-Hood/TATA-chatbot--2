@@ -52,4 +52,4 @@ def bot_query(query):
 #             output[key] += chunk[key]
 #         if key == "answer":
 #             print(chunk[key], end="", flush=True)
-#         curr_key = key
+#         curr_key = key new file
