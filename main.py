@@ -7,7 +7,7 @@ st.markdown("""
                     padding-top: 1rem;
                     padding-bottom: 0rem;
                     padding-left: 0rem;
-                    padding-right: 0rem;
+                 cd        padding-right: 0rem;
                 }
         </style>
         """, unsafe_allow_html=True)
@@ -16,15 +16,15 @@ st.title("TATA MOTORS")
 st.text("Unleash the true potential of Tata Vehicles by exploring it with our AI powered ChatBots")
 st.text("Get your custom questions answered by us at any scale. Experience the true Next-Gen !!!")
 
-SUVS = st.Page("cars/create.py", title="SUVs", icon=":material/add_circle:")
+SUVS = st.Page("cars/SUVS.py", title="SUVs", icon=":material/add_circle:")
 
-Sedans = st.Page("cars/delete.py", title="Sedans", icon=":material/square:")
+Sedans = st.Page("cars/Sedans/Sedans.py", title="Sedans", icon=":material/square:")
 
-Trucks=st.Page("cars/trucks.py", title='Trucks', icon=":material/circle:")
+Trucks=st.Page("trucks/trucks.py", title='Trucks', icon=":material/circle:")
 
-Buses=st.Page("cars/bus.py", title="Buses", icon=":material/add:")
+Buses=st.Page("buses/bus.py", title="Buses", icon=":material/add:")
 
-EVs=st.Page("cars/EV.py", title="EVs", icon=":material/thumb_up:")
+EVs=st.Page("cars/EVS/EV.py", title="EVs", icon=":material/thumb_up:")
 
 
 
@@ -40,5 +40,7 @@ pg = st.navigation(
 
             "Tools": [search, history],
         })
+
+
 pg.run()
 
