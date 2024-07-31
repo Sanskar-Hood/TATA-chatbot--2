@@ -17,20 +17,20 @@ os.environ["VECTARA_CORPUS_ID"] = VECTARA_CORPUS_ID
 os.environ["VECTARA_API_KEY"] = VECTARA_API_KEY
 
 # Load Nexon documents
-loader = PyPDFLoader("Safari_merged.pdf")
+loader = PyPDFLoader("altroz_merged.pdf")
 documents = loader.load()
 
-# Create Vectara instance for Nexon
-vectara_safari = Vectara.from_documents(documents, embedding=None)
+# Create Vectara instance for altroz
+vectara_altroz = Vectara.from_documents(documents, embedding=None)
 
-# Configure Vectara query for Nexon
+# Configure Vectara query for altroz
 summary_config = SummaryConfig(is_enabled=True, max_results=7, response_lang="eng")
 rerank_config = RerankConfig(reranker="mmr", rerank_k=50, mmr_diversity_bias=0.2)
 config = VectaraQueryConfig(
     k=10, lambda_val=0.005, rerank_config=rerank_config, summary_config=summary_config
 )
 
-bot_safari = vectara_safari.as_chat(config)
+bot_altroz = vectara_altroz.as_chat(config)
 
-def safari_bot_query(query):
-    return bot_safari.invoke(query)["answer"]
+def altroz_bot_query(query):
+    return bot_altroz.invoke(query)["answer"]
