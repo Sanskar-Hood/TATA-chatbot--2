@@ -16,21 +16,21 @@ os.environ["VECTARA_CUSTOMER_ID"] = VECTARA_CUSTOMER_ID
 os.environ["VECTARA_CORPUS_ID"] = VECTARA_CORPUS_ID
 os.environ["VECTARA_API_KEY"] = VECTARA_API_KEY
 
-# Load Harrier documents
-loader = PyPDFLoader("harrier_merged.pdf")
+# Load Tiago documents
+loader = PyPDFLoader("tiago_merged.pdf")
 documents = loader.load()
 
-# Create Vectara instance for Harrier
-vectara_harrier = Vectara.from_documents(documents, embedding=None)
+# Create Vectara instance for Tiago
+vectara_tiago = Vectara.from_documents(documents, embedding=None)
 
-# Configure Vectara query for Harrier
+# Configure Vectara query for Tiago
 summary_config = SummaryConfig(is_enabled=True, max_results=7, response_lang="eng")
 rerank_config = RerankConfig(reranker="mmr", rerank_k=50, mmr_diversity_bias=0.2)
 config = VectaraQueryConfig(
     k=10, lambda_val=0.005, rerank_config=rerank_config, summary_config=summary_config
 )
 
-bot_harrier = vectara_harrier.as_chat(config)
+bot_tiago = vectara_tiago.as_chat(config)
 
-def harrier_bot_query(query):
-    return bot_harrier.invoke(query)["answer"]
+def tiago_bot_query(query):
+    return bot_tiago.invoke(query)["answer"]
