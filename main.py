@@ -16,29 +16,23 @@ st.title("TATA MOTORS")
 st.text("Unleash the true potential of Tata Vehicles by exploring it with our AI powered ChatBots")
 st.text("Get your custom questions answered by us at any scale. Experience the true Next-Gen !!!")
 
-SUVS = st.Page("cars/SUVS.py", title="SUVs", icon=":material/add_circle:")
+Nexon = st.Page("nexon.py", title="Nexon", icon=":material/add_circle:")
 
-Sedans = st.Page("cars/Sedans/Sedans.py", title="Sedans", icon=":material/square:")
-
-Trucks=st.Page("trucks/trucks.py", title='Trucks', icon=":material/circle:")
-
-Buses=st.Page("buses/bus.py", title="Buses", icon=":material/add:")
-
-EVs=st.Page("cars/EVS/EV.py", title="EVs", icon=":material/thumb_up:")
+Punch = st.Page("punch.py", title="Punch", icon=":material/square:")
 
 
+Safari=st.Page("safari.py", title="Safari", icon=":material/thumb_up:")
 
-search = st.Page("tools/search.py", title="Search", icon=":material/search:")
-history = st.Page("tools/history.py", title="History", icon=":material/history:")
+Harrier = st.Page("harrier.py", title="Harrier ", icon=":material/thumb_up:")
 
+Tiago = st.Page("Tiago.py", title="Tiago ", icon=":material/thumb_up:")
 
+Altroz = st.Page("Altroz.py", title="Altroz ", icon=":material/thumb_up:")
 pg = st.navigation(
         {
-            "Cars": [SUVS,Sedans,EVs],
-            "Buses" : [Buses],
-            "Trucks" : [Trucks],
+            "SUVS": [Nexon,Punch,Safari,Harrier],
+            "Sedans" :[Tiago,Altroz]
 
-            "Tools": [search, history],
         })
 
 

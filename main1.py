@@ -24,7 +24,7 @@ from langchain_community.vectorstores.vectara import (
 from langchain_community.document_loaders import PyPDFLoader
 
 
-loader = PyPDFLoader("punch-brochure_merged.pdf")
+loader = PyPDFLoader("data/punch-brochure_merged.pdf")
 documents = loader.load()
 
 vectara = Vectara.from_documents(documents, embedding=None)
